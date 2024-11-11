@@ -1,0 +1,20 @@
+[Unit]
+Description=Shuhari community service trial
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/berika/Automation/Service/ShuhariService.sh
+User=root
+Group=root
+WorkingDirectory=/home/berika/Automation/Service
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=0
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target
+
